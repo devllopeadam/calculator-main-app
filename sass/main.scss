@@ -1,0 +1,294 @@
+// Call the variables file
+
+@use "./variables" as *;
+
+// Global rules
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+body {
+  font-family: "League Spartan", sans-serif !important;
+  width: 100%;
+  height: 100vh;
+  font-weight: 700;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+// Set the colors classes
+
+.text-white {
+  color: $text_white;
+}
+
+@mixin make_key($bgKey, $bgShadow, $bgHover, $text_color) {
+  cursor: pointer;
+  border-radius: 9px;
+  box-shadow: 0px 3.8px 0 0px $bgShadow;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $keys_font-size;
+  background-color: $bgKey;
+  transition: all 0.3s ease;
+
+  color: $text_color;
+  &:hover {
+    background-color: $bgHover;
+  }
+  @media (max-width: 576px) {
+    font-size: 25px;
+  }
+  &.active {
+    transform: scale(0.97) translateY(2px);
+  }
+}
+
+@mixin make_toggler($bgToggler, $bgHover) {
+  background-color: $bgToggler;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    background-color: $bgHover;
+  }
+}
+
+[data-theme="theme1"] {
+  .body-bg {
+    background-color: $theme1_body_bg;
+  }
+  .dominant_color {
+    color: $text_white;
+  }
+  .bg-keypad {
+    background-color: $theme1_keypad_bg;
+  }
+  .bg-screen {
+    background-color: $theme1_screen_bg;
+  }
+  .key-num-operator {
+    @include make_key(
+      $theme1_white_key_bg,
+      $theme1_white_key_shadow,
+      $theme1_white_key_hover,
+      $theme1_text_blue
+    );
+  }
+  .key-reset-del {
+    @include make_key(
+      $theme1_blue_key_bg,
+      $theme1_blue_key_shadow,
+      $theme1_blue_key_hover_bg,
+      $text_white
+    );
+  }
+  .key-equal {
+    @include make_key(
+      $theme1_red_key_bg,
+      $theme1_red_key_shadow,
+      $theme1_red_key_hover,
+      $text_white
+    );
+  }
+  .toggler {
+    @include make_toggler($theme1_red_key_bg, $theme1_red_key_hover);
+  }
+}
+
+[data-theme="theme2"] {
+  .body-bg {
+    background-color: $theme2_body_bg;
+  }
+  .dominant_color {
+    color: $theme2_text_black;
+  }
+  .bg-keypad {
+    background-color: $theme2_keypad_bg;
+  }
+  .bg-screen {
+    background-color: $theme2_screen_bg;
+  }
+  .key-num-operator {
+    @include make_key(
+      $theme2_grayish_key_bg,
+      $theme2_grayish_key_shadow,
+      $theme2_grayish_key_hover,
+      $theme2_text_black
+    );
+  }
+  .key-reset-del {
+    @include make_key(
+      $theme2_green_key_bg,
+      $theme2_green_key_shadow,
+      $theme2_green_key_hover,
+      $text_white
+    );
+  }
+  .key-equal {
+    @include make_key(
+      $theme2_orange_key_bg,
+      $theme2_orange_key_shadow,
+      $theme2_orange_key_hover,
+      $text_white
+    );
+  }
+  .toggler {
+    @include make_toggler($theme2_orange_key_bg, $theme2_orange_key_hover);
+  }
+}
+
+[data-theme="theme3"] {
+  .body-bg {
+    background-color: $theme3_body_bg;
+  }
+  .dominant_color {
+    color: $theme3_text_yellow;
+  }
+  .bg-keypad,
+  .bg-screen {
+    background-color: $theme3_keypad_bg;
+  }
+  .key-num-operator {
+    @include make_key(
+      $theme3_darkViolet_key_bg,
+      $theme3_darkViolet_key_shadow,
+      $theme3_darkViolet_key_hover,
+      $theme3_text_yellow
+    );
+  }
+  .key-reset-del {
+    @include make_key(
+      $theme3_violet_key_bg,
+      $theme3_violet_key_shadow,
+      $theme3_violet_key_hover,
+      $text_white
+    );
+  }
+  .key-equal {
+    @include make_key(
+      $theme3_cyan_key_bg,
+      $theme3_cyan_key_shadow,
+      $theme3_cyan_key_hover,
+      $theme3_text_blue
+    );
+  }
+  .toggler {
+    @include make_toggler($theme3_cyan_key_bg, $theme3_cyan_key_hover);
+  }
+}
+
+// Start the app
+
+.main-calculator {
+  width: 490px;
+  min-height: 520px;
+
+  @media (max-width: 576px) {
+    padding: 30px 0;
+    width: 90%;
+    height: 100%;
+  }
+
+  &__header {
+    h2 {
+      font-size: 30px;
+    }
+
+    article {
+      width: 140px;
+      p {
+        font-size: 13px;
+      }
+
+      .toggler-box {
+        width: 70px;
+        height: 23px;
+        border-radius: 15px;
+        cursor: pointer;
+
+        & > span {
+          content: "";
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          border-radius: 50%;
+        }
+
+        &[data-toggler="theme1"] > span {
+          left: 4px;
+        }
+        &[data-toggler="theme2"] > span {
+          left: 25px;
+        }
+        &[data-toggler="theme3"] > span {
+          left: 51px;
+        }
+
+        p {
+          font-size: 12px;
+          top: -19px;
+          left: 20px;
+        }
+
+        p:first-of-type {
+          left: 5.5px;
+        }
+        p:nth-of-type(2) {
+          left: 29px;
+        }
+        p:last-of-type {
+          left: 55px;
+        }
+      }
+    }
+  }
+
+  &__screen {
+    border-radius: 6px;
+    text-align: right;
+    max-height: 80px;
+    min-height: 80px;
+
+    input {
+      height: 100%;
+      padding: 32px 25px;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      height: 80px;
+      font-size: 36px;
+      text-align: right;
+    }
+  }
+
+  &__keypad {
+    padding: 25px;
+    border-radius: 6px;
+    min-height: 410px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+
+    button.reset,
+    button.equal {
+      grid-column: span 2;
+    }
+  }
+}

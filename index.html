@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"
+  data-theme="theme1">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+    <!-- For the site icon -->
+    <link rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png">
+
+    <!-- For the font -->
+    <link rel="preconnect"
+      href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet">
+    <!-- For styling -->
+    <link rel="stylesheet"
+      href="css/main.css">
+    <link rel="stylesheet"
+      href="css/bootstrap.min.css">
+
+    <title>Frontend Mentor | Calculator app</title>
+
+  </head>
+
+  <body class="body-bg d-flex align-items-center justify-content-center">
+    <main class="main-calculator">
+      <header class="main-calculator__header d-flex justify-content-between align-items-center pb-3">
+        <h2 class="dominant_color m-0">calc</h2>
+        <article class="d-flex justify-content-between align-items-center">
+          <p class="dominant_color m-0">THEME</p>
+          <section class="toggler-box position-relative bg-keypad"
+            data-toggler="theme1">
+            <span class="toggler"></span>
+            <p class="dominant_color position-absolute">1</p>
+            <p class="dominant_color position-absolute">2</p>
+            <p class="dominant_color position-absolute">3</p>
+          </section>
+        </article>
+      </header>
+      <section class="main-calculator__screen bg-screen mb-4">
+        <input type="text"
+          id="value"
+          class="w-100 dominant_color">
+      </section>
+      <section class="main-calculator__keypad bg-keypad">
+        <button class="key-num-operator number show"
+          data-value="7">7</button>
+        <button class="key-num-operator number show"
+          data-value="8">8</button>
+        <button class="key-num-operator number show"
+          data-value="9">9</button>
+        <button class="key-reset-del del">DEL</button>
+        <buttonk class="key-num-operator number show"
+          data-value="4">4</buttonk>
+        <buttonk class="key-num-operator number show"
+          data-value="5">5</buttonk>
+        <buttonk class="key-num-operator number show"
+          data-value="6">6</buttonk>
+        <buttonk class="key-num-operator operator show"
+          data-value="+">+</buttonk>
+        <buttonk class="key-num-operator number show"
+          data-value="1">1</buttonk>
+        <buttonk class="key-num-operator number show"
+          data-value="2">2</buttonk>
+        <buttonk class="key-num-operator number show"
+          data-value="3">3</buttonk>
+        <buttonk class="key-num-operator operator show"
+          data-value="-">-</buttonk>
+        <buttonk class="key-num-operator dot show"
+          data-value=",">,</buttonk>
+        <buttonk class="key-num-operator number show"
+          data-value="0">0</buttonk>
+        <buttonk class="key-num-operator operator show"
+          data-value="/">/</buttonk>
+        <buttonk class="key-num-operator operator show"
+          data-value="x">x</buttonk>
+        <button class="key-reset-del reset">RESET</button>
+        <button class="key-equal equal">=</button>
+      </section>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>

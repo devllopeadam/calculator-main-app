@@ -1,0 +1,61 @@
+$keys_font-size: 32px;
+$text_white: hsl(0, 0%, 100%);
+// Theme 1
+
+$theme1_body_bg: hsl(222, 26%, 31%);
+$theme1_keypad_bg: hsl(223, 31%, 20%);
+$theme1_screen_bg: hsl(224, 36%, 15%);
+
+$theme1_blue_key_bg: hsl(225, 21%, 49%);
+$theme1_blue_key_shadow: hsl(224, 28%, 35%);
+$theme1_blue_key_hover_bg: hsl(224, 51%, 76%);
+
+$theme1_red_key_bg: hsl(6, 63%, 50%);
+$theme1_red_key_shadow: hsl(6, 70%, 34%);
+$theme1_red_key_hover: hsl(6, 93%, 67%);
+
+$theme1_white_key_bg: hsl(30, 25%, 89%);
+$theme1_white_key_shadow: hsl(28, 16%, 65%);
+$theme1_white_key_hover: hsl(0, 0%, 100%);
+
+$theme1_text_blue: hsl(221, 14%, 31%);
+
+// Theme 2
+
+$theme2_body_bg: hsl(0, 0%, 90%);
+$theme2_keypad_bg: hsl(0, 5%, 81%);
+$theme2_screen_bg: hsl(0, 0%, 93%);
+
+$theme2_green_key_bg: hsl(185, 42%, 37%);
+$theme2_green_key_shadow: hsl(185, 58%, 25%);
+$theme2_green_key_hover: hsl(185, 41%, 56%);
+
+$theme2_orange_key_bg: hsl(25, 98%, 40%);
+$theme2_orange_key_shadow: hsl(25, 99%, 27%);
+$theme2_orange_key_hover: hsl(25, 100%, 61%);
+
+$theme2_grayish_key_bg: hsl(45, 7%, 89%);
+$theme2_grayish_key_shadow: hsl(35, 11%, 61%);
+$theme2_grayish_key_hover: hsl(0, 0%, 100%);
+
+$theme2_text_black: hsl(60, 10%, 19%);
+
+// Theme 3
+
+$theme3_body_bg: hsl(268, 75%, 9%);
+$theme3_keypad_bg: hsl(268, 71%, 12%);
+
+$theme3_violet_key_bg: hsl(281, 89%, 26%);
+$theme3_violet_key_shadow: hsl(285, 91%, 52%);
+$theme3_violet_key_hover: hsl(280, 56%, 44%);
+
+$theme3_cyan_key_bg: hsl(176, 100%, 44%);
+$theme3_cyan_key_shadow: hsl(177, 92%, 70%);
+$theme3_cyan_key_hover: hsl(177, 100%, 79%);
+
+$theme3_darkViolet_key_bg: hsl(268, 47%, 21%);
+$theme3_darkViolet_key_shadow: hsl(290, 70%, 36%);
+$theme3_darkViolet_key_hover: hsl(268, 54%, 44%);
+
+$theme3_text_yellow: hsl(52, 100%, 62%);
+$theme3_text_blue: hsl(198, 20%, 13%);
